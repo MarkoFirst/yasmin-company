@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font('Amble', 'assets/fonts/amble/Amble-Light');
+body {
+  font-family: Amble, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
