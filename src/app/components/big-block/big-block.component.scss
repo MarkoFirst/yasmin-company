@@ -1,10 +1,40 @@
 .big-block {
-  background: url("http://img.lenagold.ru/p/pods/pods21.png") no-repeat center;
+  background: no-repeat center;
   background-size: contain;
   width: 100%;
+
+  transition: 0.5s;
 }
+
+.big-about-us {
+  background: no-repeat bottom right;
+  background-size: 70%;
+  width: 100%;
+  transition: 0.5s;
+
+  .about-us {
+    position: absolute;
+    left: 450px;
+    top: 30px;
+    width: 500px;
+    height: 400px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
 app-header {
   position: absolute;
   left: 40px;
   top: 40px;
+}
+.logo {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+
+  height: 150px;
+  width: 150px;
 }
