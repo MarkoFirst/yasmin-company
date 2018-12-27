@@ -6,6 +6,11 @@ import {LandingComponent} from '../components/landing/landing.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/home/about_us',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home/:name',
     component: BigBlockComponent
   },
   {
