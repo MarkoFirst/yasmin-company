@@ -2,25 +2,42 @@
   background: no-repeat center;
   background-size: contain;
   width: 100%;
+  height: 100vh;
 
   transition: 0.5s;
+
+  .big-link {
+    margin: 0 auto;
+    display: block;
+    width: 65%;
+    height: 100vh;
+    cursor: url(/src/assets/images/icons8-circled-right-64.png), auto;
+  }
 }
 
 .big-about-us {
   background: no-repeat bottom right;
   background-size: 70%;
   width: 100%;
+  height: 100vh;
   transition: 0.5s;
 
-  .about-us {
+  .about-us, .contacts {
     position: absolute;
     left: 450px;
     top: 30px;
-    width: 500px;
+    width: 40%;
     height: 400px;
+    font-size: 20px;
+  }
 
-    p {
-      font-size: 20px;
+  .contacts {
+    table {
+      td:first-child {
+        font-weight: bold;
+        width: 100px;
+        padding: 5px;
+      }
     }
   }
 }
@@ -37,4 +54,18 @@ app-header {
 
   height: 150px;
   width: 150px;
+
+  .name {
+    position: absolute;
+    left: -55px;
+    top: -15px;
+
+    h2, h4 {
+      margin: 0;
+    }
+
+    h4 {
+      margin-left: -20px;
+    }
+  }
 }

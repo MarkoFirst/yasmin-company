@@ -14,7 +14,7 @@ const routes: Routes = [
     component: BigBlockComponent
   },
   {
-    path: 'landing',
+    path: 'landing/:name',
     component: LandingComponent
   },
 ];

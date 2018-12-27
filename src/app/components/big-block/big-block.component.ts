@@ -10,9 +10,9 @@ import {Subject, Subscription} from 'rxjs';
   styleUrls: ['./big-block.component.scss']
 })
 export class BigBlockComponent implements OnInit, OnDestroy {
-  innerHeight: number;
   links = LINKS;
   currentLink: any;
+
   private onDestroyStream$ = new Subject<void>();
   private scroll = new Subject();
   private subscription: Subscription;
@@ -21,8 +21,6 @@ export class BigBlockComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.innerHeight = window.innerHeight;
-
     this.route.paramMap
       .pipe(takeUntil(this.onDestroyStream$))
       .subscribe(name => {
@@ -30,7 +28,7 @@ export class BigBlockComponent implements OnInit, OnDestroy {
       });
 
     this.subscription = this.scroll
-      .pipe(debounceTime(40))
+      .pipe(debounceTime(50))
       .subscribe((e: boolean) => this.trigger = e);
   }
 

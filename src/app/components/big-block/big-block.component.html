@@ -1,7 +1,8 @@
 <app-header></app-header>
-<div [style.height]="innerHeight + 'px'"
-     [style.background-image]="'url(' + currentLink.img + ')'"
-     [class]="currentLink.link === 'about_us' ? 'big-about-us' : 'big-block'">
+<div [style.background-image]="'url(' + currentLink.img + ')'"
+     [class]="currentLink.link === 'about_us' || currentLink.link === 'contacts' || currentLink.link === 'contact_form' ? 'big-about-us' : 'big-block'">
+
+  <a routerLink="/landing/{{currentLink.link}}" class="big-link"></a>
 
   <div *ngIf="currentLink.link === 'about_us'" class="about-us">
     <h1>Why the "About Us" Page Rocks: It's humble.</h1>
@@ -10,8 +11,35 @@
     <p>Take Moz, for example. A lot has happened since it was founded in 2004, so the company chose to share those milestones using a fun and clean design that incorporates clear headers, concise blurbs, and little graphics to break up the text.</p>
   </div>
 
+  <div *ngIf="currentLink.link === 'contacts'" class="contacts">
+    <h1>Jasmine Karzone Company</h1>
+    <table>
+      <tr>
+        <td>Mobile:</td>
+        <td>+38 (067) 92-92-601</td>
+      </tr>
+      <tr>
+        <td>Tel:</td>
+        <td>+38 (048) 719-32-47</td>
+      </tr>
+      <tr>
+        <td>Skype:</td>
+        <td>hazemkarzon</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>karzonseeds@rambler.ru</td>
+      </tr>
+    </table>
+  </div>
+
 </div>
 <div class="logo">
+  <div class="name">
+    <h2 style="color: #95b47b">JASMINE</h2>
+    <h2 style="color: #95b47b">KARZON</h2>
+    <h4>company</h4>
+  </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.86 360.47">
     <defs>
       <style>.cls-1{fill:#95b47b;}</style>
