@@ -1,0 +1,24 @@
+<div class="landing-row">
+  <div class="header" *ngIf="row.type === 'header'">
+    header
+  </div>
+
+  <div class="specifications" *ngIf="row.type === 'specifications'">
+    <img *ngIf="row.position === 'left'" src="{{row.image}}" alt="">
+    <ul>
+      <li><strong>{{row.title}}</strong></li>
+      <li *ngFor="let item of row.text">{{item}}</li>
+    </ul>
+    <img *ngIf="row.position === 'right'" src="{{row.image}}" alt="">
+  </div>
+
+  <div class="text" *ngIf="row.type === 'text'">
+    <div class="desc-title" [style.background-image]="'url(' + row.image + ')'">
+      <div class="base-padding" [style.color]="row.color">
+        <h1>{{row.title}}</h1>
+        <p>{{row.text}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="down-btn"><img src="http://cdn.onlinewebfonts.com/svg/img_125564.png" alt=""></div>
+</div>

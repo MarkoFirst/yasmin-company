@@ -7,6 +7,7 @@ import { FooterComponent } from './share/footer/footer.component';
 import { HeaderComponent } from './share/header/header.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
+import { LandingRowComponent } from './components/landing-row/landing-row.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LandingComponent } from './components/landing/landing.component';
     BigBlockComponent,
     FooterComponent,
     HeaderComponent,
-    LandingComponent
+    LandingComponent,
+    LandingRowComponent
   ],
   imports: [
     AppRoutingModule,

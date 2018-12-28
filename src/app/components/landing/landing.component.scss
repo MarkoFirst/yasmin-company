@@ -1,36 +1,5 @@
-
-ul{
-  list-style: none;
-}
-li{
-  padding: 5px;
-  font-size: 20px;
-}
 html::-webkit-scrollbar {
   width: 0;
-}
-.main-block{
-  overflow: hidden;
-  .desc-title{
-    background-image: url("/src/assets/images/157053-OUGPE8-56.jpg");
-    background-size: cover;
-    height: 100vh;
-    .base-padding{
-      padding: 24px;
-      font-size: 20px;
-    }
-  }
-  .picture-row{
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    width: auto;
-
-
-    img{
-      height: 100%;
-    }
-  }
 }
 
 @media  screen and (max-width: 768px) {
@@ -48,6 +17,4 @@ html::-webkit-scrollbar {
       }
     }
   }
-
-
 }

@@ -1,0 +1,59 @@
+.landing-row {
+  height: 100vh;
+  width: 100%;
+
+  .down-btn {
+
+    img {
+      position: relative;
+      top: -250px;
+      left: 50%;
+      height: 200px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 50px #95b47b;
+      }
+    }
+  }
+
+  .specifications {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+
+    img {
+      height: 100vh;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .text {
+    height: 100vh;
+    width: 100%;
+
+    img {
+      height: 100vh;
+    }
+
+    .desc-title {
+      background-size: cover;
+      height: 100vh;
+
+      .base-padding {
+        padding: 24px;
+        font-size: 22px;
+      }
+    }
+  }
+}
