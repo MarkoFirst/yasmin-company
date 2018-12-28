@@ -1,4 +1,4 @@
-<ul>
+<ul [class]="hovered ? 'hovered' : null">
   <li *ngFor="let link of links" [style.margin-bottom]="link.margin + 'px'">
     <a routerLink="/home/{{link.link}}" [class]="linkName === link.link ? 'active' : null">{{link.title}}</a>
   </li>

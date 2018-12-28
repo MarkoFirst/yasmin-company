@@ -2,6 +2,16 @@ html::-webkit-scrollbar {
   width: 0;
 }
 
+.static {
+  top: 50px;
+
+  app-header {
+    position: fixed;
+    right: 340px;
+    top: 40px;
+  }
+}
+
 @media  screen and (max-width: 768px) {
   .main-block{
     .desc-title{

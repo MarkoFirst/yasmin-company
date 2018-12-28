@@ -8,6 +8,7 @@ import { HeaderComponent } from './share/header/header.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { LandingRowComponent } from './components/landing-row/landing-row.component';
+import { LogoComponent } from './share/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LandingRowComponent } from './components/landing-row/landing-row.compon
     FooterComponent,
     HeaderComponent,
     LandingComponent,
-    LandingRowComponent
+    LandingRowComponent,
+    LogoComponent
   ],
   imports: [
     AppRoutingModule,
