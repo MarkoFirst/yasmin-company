@@ -1,6 +1,9 @@
 <div class="landing-row">
-  <div class="header" *ngIf="row.type === 'header'">
-    header
+  <div *ngIf="top" class="navigate top-btn">
+    <img src="https://png.pngtree.com/svg/20170412/drop_down_select_arrow_437393.png" style="transform: rotate(180deg)" alt="">
+  </div>
+  <div *ngIf="bottom" class="navigate down-btn">
+    <img src="https://png.pngtree.com/svg/20170412/drop_down_select_arrow_437393.png" alt="">
   </div>
 
   <div class="specifications" *ngIf="row.type === 'specifications'">
@@ -19,9 +22,5 @@
         <p>{{row.text}}</p>
       </div>
     </div>
-  </div>
-  <div class="down-btn">
-    <div style="left: -65px; top: 20px; transform: rotate(15deg);"></div>
-    <div style="left: 65px; transform: rotate(-15deg);"></div>
   </div>
 </div>

@@ -1,4 +1,8 @@
-<app-landing-row *ngFor="let row of currentLanding" [row]="row"></app-landing-row>
+<app-landing-row *ngFor="let row of currentLanding, let i = index"
+                 [row]="row"
+                 [top]="i > 0"
+                 [bottom]="i < (currentLanding.length - 1)"
+></app-landing-row>
 
 <div class="static">
   <app-header [hovered]="true"></app-header>

@@ -15,6 +15,8 @@ export class LandingRowComponent implements OnInit {
   // @Input() image: string;
 
   @Input() row: any;
+  @Input() top: boolean;
+  @Input() bottom: boolean;
 
   constructor() { }
 
