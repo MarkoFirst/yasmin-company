@@ -13,7 +13,6 @@
 
     img {
       height: 150px;
-      border-radius: 50%;
       transition: 0.3s;
       opacity: 0.5;
     }
@@ -27,6 +26,10 @@
       justify-content: center;
       align-items: center;
 
+      img {
+        transform: rotateX(70deg) rotateZ(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+      }
     }
 
     &.top-btn {
@@ -35,13 +38,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      img{
+        transform: rotate(180deg) rotateX(-70deg) rotateZ(0deg) rotateY(0deg);
+        transform-style: preserve-3d;
+      }
     }
 
     &:hover {
-      img {
+      img{
         height: 200px;
-
         opacity: 1;
+      }
+      &.top-btn {
+        img{
+          transform: rotate(180deg) rotateX(0deg) rotateZ(0deg) rotateY(180deg);
+        }
+      }
+
+      &.down-btn {
+        img{
+          transform: rotateX(0deg) rotateZ(0deg) rotateY(180deg);
+        }
       }
     }
   }
@@ -61,7 +79,7 @@
 
       li {
         padding: 5px;
-        font-size: 20px;
+        font-size: 22px;
       }
     }
   }
@@ -79,8 +97,10 @@
       height: 100vh;
 
       .base-padding {
-        padding: 24px;
-        font-size: 22px;
+        padding: 24px 30% 24px 24px ;
+        font-size: 24px;
+        text-align: justify;
+        letter-spacing: 1px;
       }
     }
   }
