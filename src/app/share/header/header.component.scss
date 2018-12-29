@@ -1,8 +1,21 @@
+.blur {
+  position: absolute;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  background-color: #fdfdfd;
+  left: 0;
+  top: 0;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(75px);
+  z-index: 99;
+}
 ul {
   list-style-type: none;
   &.hovered {
     position: relative;
-    background-color: #ffffff2b;
     z-index: 99;
     text-align: right;
 
