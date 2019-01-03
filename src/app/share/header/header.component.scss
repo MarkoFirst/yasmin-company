@@ -2,79 +2,58 @@
 ul {
   list-style-type: none;
 
+
   &.hovered {
-    position: relative;
-    z-index: 99;
-    text-align: right;
-
     li {
-      .blur{
-        position: absolute;
-        visibility: hidden;
-        width: calc(100% + 50px);
-        height: calc(100% + 50px);
-        -webkit-transition: opacity 600ms, visibility 600ms;
-        transition: opacity 100ms, visibility 600ms;
-        background-color: #fdfdfd;
-        left: 0;
-        top: 0;
-        -webkit-filter: blur(75px);
-        -moz-filter: blur(75px);
-        -o-filter: blur(75px);
-        -ms-filter: blur(75px);
-        filter: blur(75px);
-        z-index: 99;
-      }
-
+max-height: 0;
+      padding: 0;
       a {
-        list-style: none;
         opacity: 0;
-        visibility: hidden;
-        padding: 10px;
-        -webkit-transition: opacity 600ms, visibility 600ms;
-        transition: opacity 600ms, visibility 600ms;
-        position: relative;
-        z-index: 100;
-
-        &.active {
-          visibility: visible;
-          opacity: 1;
-        }
       }
     }
 
     &:hover {
-      li > a {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    &:hover li .blur{
-      visibility: visible;
-      opacity: 1;
+      li {
+      max-height: 50px;
+        padding: 6px;
+        background-color: rgba(255,255,255,.6);
+        backdrop-filter: blur(25px);
+        border-radius: 5px;
+        a {
+          opacity: .3;
 
-      transition: opacity 600ms, visibility 600ms;
+        }
+      }
     }
   }
 
   li {
-    margin: 6px;
+    padding: 6px;
     position: relative;
+    transition: .7s;
 
+    &:hover,
+    &.active {
+      transform: scale(1.2);
+      max-height: 50px;
+      padding: 6px;
+      background-color: rgba(255,255,255,.6);
+      backdrop-filter: blur(25px);
+      border-radius: 5px;
+      a{
+        opacity: 1!important;
+        font-weight: bold;
+        font-size: 28px;
+      }
+    }
 
     a {
       text-decoration: none;
       color: black;
       font-size: 28px;
-      transition: 0.3s;
       opacity: .3;
+      transition: .4s;
 
-      &:hover, &.active {
-        padding: 2px 15px;
-        opacity: 1;
-        transition: 0.3s;
-        font-weight: bold;
-      }
     }
   }
 }

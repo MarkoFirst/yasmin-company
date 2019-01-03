@@ -1,6 +1,7 @@
 export const LINKS = [
   {title: 'About us', link: 'about_us', img: 'https://wintexagro.com/media/1015/adobestock_140253008.png', margin: 25},
   {title: 'Pumpkin seeds', link: 'pumkin_seeds', img: 'https://stickeroid.com/uploads/pic/fx0n217l-full/mask/stickeroid_5bff273a6f85f.png'},
+  {title: 'Sunflower seeds', link: 'sunflower_seeds', img: 'http://pngimagesfree.com/FLOWERS/sunflower/Sunflower-seed-and_oil.png'},
   {title: 'Chick pea', link: 'chick_pea', img: 'src/assets/images/chick_pea.png'},
   {title: 'Coriander', link: 'coriander', img: 'https://cdn.shopify.com/s/files/1/2469/7848/products/DSC_0645_1024x1024@2x.png?v=1542703070'},
   {title: 'Fava beans', link: 'fava_beans', img: 'https://foodtolive.com/wp-content/uploads/2015/08/Cranberry-Beans-30p-min.png'},

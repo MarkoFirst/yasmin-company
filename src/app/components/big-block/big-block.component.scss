@@ -22,13 +22,30 @@
   height: 100vh;
   transition: 0.5s;
 
-  .about-us, .contacts {
+  .about-us, .contacts,.contact-form {
     position: absolute;
     left: 450px;
     top: 30px;
-    width: 40%;
+    width: 30%;
     height: 400px;
     font-size: 20px;
+  }
+  .about-us{
+    display: flex;
+    width: 60%;
+    padding-top: 30px;
+    .about-us-text{
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+      padding-right: 45px;
+      h1{
+        margin-top: 0;
+      }
+    }
+    .about-us-video{
+
+    }
   }
 
   .contacts {
@@ -40,6 +57,88 @@
       }
     }
   }
+}
+.contact-form {
+  .box {
+    .req{
+      color: red;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #000000;
+      text-align: center;
+      font-size: 20px;
+    }
+    .inputBox{
+      position: relative;
+      input{
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #000;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #000;
+        outline: none;
+        background: transparent;
+        &:focus ~ label,&:valid ~ label{
+          top: -18px;
+          left: 0;
+          color: #95b47b;
+          font-size: 12px;
+        }
+
+      }
+      textarea{
+        /* tslint:disable */
+        width: -webkit-fill-available;
+        /* tslint:enable */
+        outline: none;
+        font-size: 18px;
+        &:focus ~ label,&:valid ~ label{
+          top: -27px;
+          left: 0;
+          color: #95b47b;
+          font-size: 12px;
+        }
+      }
+      label{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #000;
+        letter-spacing: 1px;
+        pointer-events: none;
+        transition: .5s;
+        span{
+          color: red;
+        }
+      }
+      p{
+        padding: 10px 0;
+        font-size: 16px;
+        color: #000;
+        letter-spacing: 1px;
+        pointer-events: none;
+      }
+    }
+  }
+}
+input[type="submit"]{
+  border:none;
+  outline: none;
+  color: #fff;
+  background-color: #95b47b;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 28px;
 }
 
 app-header {
