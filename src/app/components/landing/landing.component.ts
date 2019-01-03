@@ -1,8 +1,9 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {debounceTime, takeUntil} from 'rxjs/operators';
 import {Subject, Subscription} from 'rxjs';
 import {LANDINGS_DATA} from '../../config/constants/landingsData';
+import {LandingRowComponent} from '../landing-row/landing-row.component';
 
 @Component({
   selector: 'app-landing',
@@ -11,11 +12,12 @@ import {LANDINGS_DATA} from '../../config/constants/landingsData';
 })
 export class LandingComponent implements OnInit {
 
+  @ViewChild(LandingRowComponent) child: LandingRowComponent;
   currentLanding: any;
   landingsData: any;
   private scroll = new Subject();
   private subscription: Subscription;
-  currentRow: number = 1;
+  private trigger = true;
 
   private onDestroyStream$ = new Subject<void>();
 
@@ -29,23 +31,18 @@ export class LandingComponent implements OnInit {
 
     this.subscription = this.scroll
       .pipe(debounceTime(50))
-      .subscribe(this.scrollTo);
+      .subscribe((e: boolean) => this.trigger = e);
   }
 
   @HostListener('window:mousewheel', ['$event'])
   onScroll(event) {
     event.preventDefault();
     event.stopPropagation();
-    // this.scroll.next(event.clientX);
-  }
 
-  scrollTo(add) {
-    if (add > 700) {
-      this.currentRow += 1;
-      window.scrollTo(0,window.innerHeight * this.currentRow)
-    } else if (add < -700) {
-      this.currentRow -= 1;
-      window.scrollTo(window.innerHeight * this.currentRow, 0)
-    }
+    this.scroll.next(true);
+    if (!this.trigger) { return; }
+
+    this.child.scrollTo(event.wheelDeltaY > 0 ? -1 : 1);
+    this.trigger = false;
   }
 }

@@ -35,8 +35,8 @@ export class LandingRowComponent implements OnInit {
 
     function scrolling(i) {window.scrollTo(0, currentPosition + currentRow / (rounding / i))}
 
-    for (let i = 0; i <= rounding; i += rounding / 50) {
-      setTimeout(() => scrolling(num > 0 ? i : -i), i);
+    for (let i = 0; i <= rounding; i += rounding / 100) {
+      setTimeout(() => scrolling(num > 0 ? i : -i), i/3);
     }
   }
 }

@@ -19,7 +19,7 @@
     <div class="desc-title" [style.background-image]="'url(' + row.image + ')'">
       <div class="base-padding" [style.color]="row.color">
         <h1>{{row.title}}</h1>
-        <p>{{row.text}}</p>
+        <p [innerHTML]="row.text"></p>
       </div>
     </div>
   </div>
