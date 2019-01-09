@@ -40,14 +40,14 @@
   <div *ngIf="currentLink.link === 'contact_form'" class="contact-form">
     <div class="box">
       <h1>Contact form</h1>
-    <form action="" method="post">
+    <form action="sendToMail.php" method="post">
       <p class="req">* required field</p>
       <div class="inputBox">
-        <input type="text" name="fio" required autocomplete="off">
+        <input type="text" name="fio" required autocomplete="name">
         <label><span>* </span>Your name</label>
       </div>
       <div class="inputBox">
-        <input type="email" name="email" required autocomplete="off">
+        <input type="email" name="email" required>
         <label><span>* </span>E-Mail</label>
       </div>
       <div class="inputBox">
@@ -55,10 +55,10 @@
         <label><span>* </span>Subject</label>
       </div>
       <div class="inputBox">
-        <textarea name="your-message" rows="10" required autocomplete="off"></textarea>
+        <textarea name="message" rows="10" required autocomplete="off"></textarea>
         <label><span>* </span>Message</label>
       </div>
-      <input type="submit" value="Send message">
+      <input type="submit" value="Send">
     </form>
     </div>
   </div>

@@ -9,6 +9,9 @@ import { AppRoutingModule } from './routes/app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { LandingRowComponent } from './components/landing-row/landing-row.component';
 import { LogoComponent } from './share/logo/logo.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,21 @@ import { LogoComponent } from './share/logo/logo.component';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

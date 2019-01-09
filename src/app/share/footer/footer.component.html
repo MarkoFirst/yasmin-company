@@ -7,4 +7,17 @@
             <li><a>MFSS</a></li>
         </ul>
     </div>
+  <div class="localise" (click)="showLocalisationAlert()">
+    <img *ngIf="yasminLocalisation === 'ru'" src="http://flags.fmcdn.net/data/flags/h80/ru.png" alt="ru">
+    <img *ngIf="yasminLocalisation === 'en' || !yasminLocalisation || yasminLocalisation === 'undefined'" src="http://flags.fmcdn.net/data/flags/h80/gb.png" alt="en">
+    <img *ngIf="yasminLocalisation === 'de'" src="http://flags.fmcdn.net/data/flags/h80/de.png" alt="de">
+    <img *ngIf="yasminLocalisation === 'es'" src="http://flags.fmcdn.net/data/flags/h80/es.png" alt="es">
+  </div>
+</div>
+
+<div *ngIf="changeLocalisation" class="localisation-alert" (click)="changeLocalise($event)">
+  <img *ngIf="yasminLocalisation !== 'ru'" src="http://flags.fmcdn.net/data/flags/h80/ru.png" alt="ru">
+  <img *ngIf="yasminLocalisation !== 'en'" src="http://flags.fmcdn.net/data/flags/h80/gb.png" alt="en">
+  <img *ngIf="yasminLocalisation !== 'de'" src="http://flags.fmcdn.net/data/flags/h80/de.png" alt="de">
+  <img *ngIf="yasminLocalisation !== 'es'" src="http://flags.fmcdn.net/data/flags/h80/es.png" alt="es">
 </div>
