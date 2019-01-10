@@ -1,11 +1,4 @@
 <div class="landing-row">
-  <div *ngIf="top" class="navigate top-btn" (click)="scrollTo(-1)">
-    <img src="https://png.pngtree.com/svg/20170412/drop_down_select_arrow_437393.png" alt="">
-  </div>
-  <div *ngIf="bottom" class="navigate down-btn" (click)="scrollTo(1)">
-    <img src="https://png.pngtree.com/svg/20170412/drop_down_select_arrow_437393.png" alt="">
-  </div>
-
   <div class="specifications" *ngIf="row.type === 'specifications'">
     <img *ngIf="row.position === 'left'" src="{{row.image}}" alt="">
     <ul>
