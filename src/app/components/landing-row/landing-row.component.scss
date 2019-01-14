@@ -3,6 +3,9 @@
   width: 100%;
   position: relative;
   scroll-snap-align: start;
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
 
   .navigate {
     position: absolute;
@@ -81,7 +84,6 @@
     @media  screen and (max-width: 1024px) {
       flex-direction: column;
       align-items: center;
-      height: 100%;
       justify-content: center;
     }
 
@@ -110,6 +112,9 @@
   .text {
     height: 100vh;
     width: 100%;
+    @media screen and (max-width: 1024px) {
+      height: auto;
+    }
 
     img {
       height: 100vh;
@@ -118,6 +123,9 @@
     .desc-title {
       background-size: cover;
       height: 100vh;
+      @media screen and (max-width: 1024px) {
+        height: auto;
+      }
 
       .base-padding {
         padding-left: 24px;
@@ -129,7 +137,7 @@
         @media screen and (max-width: 1024px) {
           font-size: 14px;
           width: auto;
-          padding: 110px 24px 0 24px;
+          padding: 110px 24px 10px 24px;
         }
 
         h1 {

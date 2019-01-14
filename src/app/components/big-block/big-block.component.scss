@@ -41,7 +41,7 @@
       height: auto;
       width: auto;
       position: static;
-      padding: 75px 20px;
+      padding: 75px 20px 0 20px;
     }
   }
   .about-us{
@@ -78,6 +78,11 @@
   }
 
   .contacts {
+    h1{
+      @media screen and (max-width: 1024px) {
+        font-size: 30px;
+      }
+    }
     table {
       td:first-child {
         font-weight: bold;
@@ -125,6 +130,10 @@
           border-bottom: 1px solid #000;
           outline: none;
           background: transparent;
+          @media screen and (max-width: 1024px){
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
           &:focus ~ label, &:valid ~ label {
             top: -18px;
             left: 0;
@@ -180,6 +189,10 @@ input[type="submit"]{
   border-radius: 5px;
   font-size: 28px;
   margin-top: 20px;
+  @media screen and (max-width: 1024px){
+    font-size: 16px;
+    padding: 5px 15px;
+  }
 }
 
 app-header {

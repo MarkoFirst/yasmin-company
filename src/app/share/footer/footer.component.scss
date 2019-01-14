@@ -1,6 +1,4 @@
 .footer{
-  position: fixed;
-  bottom: 0;
   height: 70px;
   width: 100%;
   display: flex;
@@ -30,7 +28,7 @@
           border-radius: 5px;
           padding: 5px;
           @media  screen and (max-width: 1024px) {
-            font-size: 14px;
+            font-size: 11px;
           }
           &:hover{
             opacity: 1;
