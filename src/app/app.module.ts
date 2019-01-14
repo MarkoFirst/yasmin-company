@@ -9,6 +9,7 @@ import { AppRoutingModule } from './routes/app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { LandingRowComponent } from './components/landing-row/landing-row.component';
 import { LogoComponent } from './share/logo/logo.component';
+import {DeviceDetectorModule} from 'ngx-device-detector';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -25,6 +26,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   ],
   imports: [
     AppRoutingModule,
+    BrowserModule,
+    DeviceDetectorModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({

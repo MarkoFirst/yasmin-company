@@ -1,13 +1,12 @@
+<app-header [hovered]="true"></app-header>
 <div class="test">
   <app-landing-row *ngFor="let row of currentLanding$ | async as rows; first as first; last as last"
                    [row]="row"
                    [top]="!first"
                    [bottom]="!last"
   ></app-landing-row>
+  <div class="static">
+    <app-footer></app-footer>
+  </div>
 </div>
 
-<div class="static">
-  <app-header [hovered]="true"></app-header>
-  <app-footer></app-footer>
-  <app-logo></app-logo>
-</div>

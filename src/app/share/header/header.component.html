@@ -1,6 +1,5 @@
 <ul [class]="hovered ? 'hovered' : null">
-  <div *ngIf="hovered" class="blur"></div>
-  <li *ngFor="let link of links" [style.margin-bottom]="link.margin + 'px'" [class]="linkName === link.link ? 'active' : null">
+  <li *ngFor="let link of links" [class]="linkName === link.link ? 'active' : null">
     <a routerLink="/home/{{link.link}}" >{{link.title}}</a>
   </li>
 </ul>

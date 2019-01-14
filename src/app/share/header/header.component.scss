@@ -1,14 +1,40 @@
 
 ul {
   list-style-type: none;
-
+  @media  screen and (max-width: 1024px), (max-height: 750px) {
+    padding-left: 0;
+    display: -webkit-box;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 0;
+  }
+  &::-webkit-scrollbar{
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #6d6e6b;
+    background-color: #95b47b;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-track{
+    border-width:0;
+  }
 
   &.hovered {
     li {
 max-height: 0;
       padding: 0;
+      @media  screen and (max-width: 1024px) {
+        padding: 6px;
+        height: 100%;
+        max-height: 100%;
+      }
       a {
         opacity: 0;
+        @media  screen and (max-width: 1024px) {
+          opacity: 0.3;
+        }
       }
     }
 
@@ -19,9 +45,14 @@ max-height: 0;
         background-color: rgba(255,255,255,.6);
         backdrop-filter: blur(25px);
         border-radius: 5px;
+        @media  screen and (max-width: 1024px) {
+          max-height: inherit;
+        }
         a {
           opacity: .3;
-
+          @media  screen and (max-width: 1024px) {
+            opacity: 1;
+          }
         }
       }
     }
@@ -31,6 +62,15 @@ max-height: 0;
     padding: 6px;
     position: relative;
     transition: .7s;
+    &:nth-child(1), &:nth-child(12){
+      margin-bottom: 25px;
+      @media screen and (max-width: 1024px), (max-height: 750px){
+        margin: 10px ;
+      }
+    }
+    @media screen and (max-width: 1024px), (max-height: 750px){
+      margin: 10px;
+    }
 
     &:hover,
     &.active {
@@ -44,6 +84,9 @@ max-height: 0;
         opacity: 1!important;
         font-weight: bold;
         font-size: 28px;
+        @media screen and (max-width: 1024px) {
+          font-size: 18px;
+        }
       }
     }
 
@@ -53,7 +96,27 @@ max-height: 0;
       font-size: 28px;
       opacity: .3;
       transition: .4s;
-
+      @media screen and (max-width: 1024px) {
+        font-size: 18px;
+        opacity: 1;
+      }
     }
   }
+}
+
+.mobile-header {
+  height: 70vh;
+  padding: 0 15px;
+  ul{
+    padding-left: 15px;
+    li{
+      a{
+        font-size: 18px;
+      }
+    }
+    .mobile_button{
+      text-align: right;
+    }
+  }
+
 }

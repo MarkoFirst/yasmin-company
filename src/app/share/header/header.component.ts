@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {LINKS} from '../../config/constants/homeLinks';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,15 @@ import {LINKS} from '../../config/constants/homeLinks';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() hovered: boolean;
-
+  deviceInfo = null;
   links = LINKS;
 
   private onDestroyStream$ = new Subject<void>();
   linkName: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public deviceService: DeviceDetectorService) {
+      this.detectDevice();
+  }
 
   ngOnInit() {
     this.route.paramMap
@@ -25,6 +28,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe(name => {
         this.linkName = name.get('name');
       });
+  }
+
+  public detectDevice() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 
   ngOnDestroy(): void {
