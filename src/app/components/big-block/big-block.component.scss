@@ -15,7 +15,7 @@
     height: 100vh;
     cursor: url(/src/assets/images/icons8-circled-right-64.png), auto;
     @media  screen and (max-width: 1024px) {
-      height: 80vh;
+      height: calc(100vh - 58px);
     }
   }
 }
@@ -27,7 +27,7 @@
   height: 100vh;
   transition: 0.5s;
   @media  screen and (max-width: 1024px) {
-    height: auto;
+    height: calc(100vh - 58px);
   }
 
   .about-us, .contacts,.contact-form {
